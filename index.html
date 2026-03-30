@@ -492,7 +492,14 @@
     }
     .timeline__desc { max-width: 100%; }
     .day-images__item::before {
-      background: linear-gradient(to bottom, var(--dark) 0%, transparent 15%, transparent 85%, var(--dark) 100%);
+      background: linear-gradient(to bottom, var(--dark) 0%, transparent 20%, transparent 80%, var(--dark) 100%);
+    }
+    .day-images__item::after {
+      background: none;
+    }
+    .day-images__item {
+      border: 1px solid rgba(26,5,5,0.8);
+      box-shadow: 0 0 20px rgba(26,5,5,0.9);
     }
     .mobile-intro .hero__stats { grid-template-columns: repeat(4, 1fr); }
     .day-header__num { font-size: 52px; }
