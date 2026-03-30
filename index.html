@@ -402,6 +402,13 @@
     letter-spacing: 1px;
   }
 
+  /* ── MOBILE INTRO (hidden on desktop) ── */
+  .mobile-intro {
+    display: none;
+    background: linear-gradient(to bottom, var(--deep-red) 0%, var(--dark) 100%);
+    padding: 80px 24px;
+  }
+
   /* ── SCROLL ANIMATIONS ── */
   .reveal {
     opacity: 0;
@@ -446,24 +453,18 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .hero__content { grid-template-columns: 1fr; padding: 0 24px; }
-    .hero { align-items: flex-end; }
-    .hero__content { padding-bottom: 60px; }
+    .hero { height: auto; min-height: 100svh; align-items: flex-end; }
+    .hero__content { grid-template-columns: 1fr; padding: 0 24px 60px; }
     .hero__overlay {
       background: linear-gradient(to bottom,
-        rgba(26,5,5,0.6) 0%,
-        rgba(26,5,5,0.5) 30%,
-        rgba(26,5,5,0.75) 60%,
-        rgba(45,10,10,0.95) 100%
+        rgba(26,5,5,0.2) 0%,
+        rgba(26,5,5,0.1) 30%,
+        rgba(26,5,5,0.6) 60%,
+        rgba(45,10,10,1) 100%
       );
     }
-    .hero__right {
-      background: rgba(26,5,5,0.5);
-      padding: 24px;
-      border-radius: 8px;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
+    .hero__right { display: none; }
+    .mobile-intro { display: block; }
     .hero__stats { grid-template-columns: repeat(4, 1fr); }
     .intro__grid { grid-template-columns: 1fr; }
     .machines__grid { grid-template-columns: 1fr; }
@@ -548,6 +549,20 @@
           <div class="stat__label">Legendary Show</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MOBILE INTRO (hidden on desktop) ═══════════════════ -->
+<section class="mobile-intro reveal">
+  <div class="container">
+    <p class="hero__desc">Two days on rigid-frame Evolution Sportster choppers, hand-built by OCEANBEETLE, through Pacific coastlines, volcanic mountain passes, ancient shrines, and neon-lit izakaya alleys — arriving at JOINTS 2026, Japan's largest custom motorcycle show.</p>
+    <p class="hero__desc" style="margin-top:16px;">RSK — our builder — leads on his own Sportster. Every road was chosen for a reason. Every stop tells a story.</p>
+    <div class="hero__stats" style="margin-top:32px;">
+      <div><div class="stat__number">300+</div><div class="stat__label">Kilometers</div></div>
+      <div><div class="stat__number">2</div><div class="stat__label">Days Riding</div></div>
+      <div><div class="stat__number">3</div><div class="stat__label">Choppers</div></div>
+      <div><div class="stat__number">1</div><div class="stat__label">Legendary Show</div></div>
     </div>
   </div>
 </section>
