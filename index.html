@@ -503,13 +503,20 @@
     .day-images__item::before {
       background: linear-gradient(to bottom,
         var(--dark) 0%,
-        rgba(26,5,5,0.4) 30%,
-        rgba(26,5,5,0.4) 70%,
+        var(--dark) 5%,
+        transparent 35%,
+        transparent 65%,
+        var(--dark) 95%,
         var(--dark) 100%
-      );
+      ) !important;
     }
     .day-images__item::after {
-      background: none;
+      background: linear-gradient(to right,
+        var(--dark) 0%,
+        transparent 8%,
+        transparent 92%,
+        var(--dark) 100%
+      ) !important;
     }
     .mobile-intro .hero__stats { grid-template-columns: repeat(4, 1fr); }
     .day-header__num { font-size: 52px; }
@@ -538,6 +545,24 @@
       margin: 0 -16px;
       max-width: none;
       border-radius: 0;
+    }
+    .day-images__item::before {
+      background: linear-gradient(to bottom,
+        var(--dark) 0%,
+        var(--dark) 5%,
+        transparent 35%,
+        transparent 65%,
+        var(--dark) 95%,
+        var(--dark) 100%
+      ) !important;
+    }
+    .day-images__item::after {
+      background: linear-gradient(to right,
+        var(--dark) 0%,
+        transparent 5%,
+        transparent 95%,
+        var(--dark) 100%
+      ) !important;
     }
     .timeline { padding-left: 32px; }
     .timeline__item { padding-left: 16px; margin-bottom: 36px; }
