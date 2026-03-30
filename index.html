@@ -469,8 +469,10 @@
     .hero__right { display: none; }
     .mobile-intro { display: block; }
     .hero__stats { grid-template-columns: repeat(4, 1fr); }
+    section { padding: 100px 48px; }
+    .container { max-width: 700px; margin: 0 auto; }
     .intro__grid { grid-template-columns: 1fr; }
-    .machines__grid { grid-template-columns: 1fr; }
+    .machines__grid { grid-template-columns: 1fr; max-width: 500px; }
     .day-layout { grid-template-columns: 1fr; }
     .day-images {
       flex-direction: column;
@@ -478,11 +480,13 @@
       gap: 20px;
       padding-top: 32px;
       max-width: 500px;
+      margin: 0 auto;
     }
     .day-images__item {
       height: 300px;
       border-radius: 4px;
     }
+    .timeline__desc { max-width: 100%; }
     .day-images__item::before {
       background: linear-gradient(to bottom, var(--dark) 0%, transparent 15%, transparent 85%, var(--dark) 100%);
     }
