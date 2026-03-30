@@ -402,48 +402,105 @@
     letter-spacing: 1px;
   }
 
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+
   /* ── RESPONSIVE ── */
-  /* Tablet */
   @media (max-width: 900px) {
     .hero__content { grid-template-columns: 1fr; padding: 0 24px; }
     .hero { align-items: flex-end; }
     .hero__content { padding-bottom: 60px; }
     .hero__overlay {
       background: linear-gradient(to bottom,
-        rgba(26,5,5,0.4) 0%, rgba(26,5,5,0.2) 40%,
-        rgba(26,5,5,0.7) 70%, rgba(45,10,10,1) 100%
+        rgba(26,5,5,0.6) 0%,
+        rgba(26,5,5,0.5) 30%,
+        rgba(26,5,5,0.75) 60%,
+        rgba(45,10,10,0.95) 100%
       );
+    }
+    .hero__right {
+      background: rgba(26,5,5,0.5);
+      padding: 24px;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
     .hero__stats { grid-template-columns: repeat(4, 1fr); }
     .intro__grid { grid-template-columns: 1fr; }
     .machines__grid { grid-template-columns: 1fr; }
     .day-layout { grid-template-columns: 1fr; }
-    .day-images { flex-direction: row; position: static; gap: 12px; padding-top: 32px; }
-    .day-images__item { height: 180px; flex: 1; }
+    .day-images {
+      flex-direction: column;
+      position: static;
+      gap: 16px;
+      padding-top: 32px;
+    }
+    .day-images__item {
+      height: 220px;
+      border-radius: 4px;
+    }
+    .day-images__item::before {
+      background: linear-gradient(to bottom, var(--dark) 0%, transparent 15%, transparent 85%, var(--dark) 100%);
+    }
     .day-header__num { font-size: 52px; }
     .image-break { background-attachment: scroll; }
     .joints-header { flex-direction: column; align-items: flex-start; }
   }
-  /* Mobile */
   @media (max-width: 480px) {
     section { padding: 80px 16px; }
     .hero { min-height: 100svh; }
-    .hero__content { padding: 0 16px 48px; }
-    .hero__title { font-size: 48px; }
-    .hero__personal { font-size: 11px; letter-spacing: 1.5px; }
-    .hero__desc { font-size: 14px; }
-    .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .stat__number { font-size: 36px; }
+    .hero__content { padding: 0 16px 40px; gap: 24px; }
+    .hero__title { font-size: 44px; }
+    .hero__personal { font-size: 10px; letter-spacing: 1.5px; }
+    .hero__desc { font-size: 13px; line-height: 1.7; }
+    .hero__right { padding: 20px; }
+    .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .stat__number { font-size: 32px; }
     .stat__label { font-size: 9px; }
-    .hero__date { font-size: 16px; letter-spacing: 3px; }
+    .hero__date { font-size: 15px; letter-spacing: 3px; }
     .day-header { flex-direction: column; gap: 8px; }
     .day-header__num { font-size: 40px; }
     .day-header__info h3 { font-size: 22px; }
-    .day-images { flex-direction: column; gap: 16px; }
     .day-images__item { height: 200px; }
-    .day-images__item::before {
-      background: linear-gradient(to bottom, var(--dark) 0%, transparent 20%, transparent 80%, var(--dark) 100%);
-    }
     .timeline { padding-left: 32px; }
     .timeline__item { padding-left: 16px; margin-bottom: 36px; }
     .timeline__item::before { left: -28px; }
@@ -465,12 +522,12 @@
   <div class="hero__bg"></div>
   <div class="hero__overlay"></div>
   <div class="hero__content">
-    <div class="hero__left">
+    <div class="hero__left reveal-left">
       <p class="hero__personal">Becky & Adri — we built this ride for you</p>
       <h1 class="hero__title">JAPAN<br>ROAD TRIP<br><span>Ride to JOINTS</span></h1>
       <div class="hero__date">APRIL 10 – 12, 2026</div>
     </div>
-    <div class="hero__right">
+    <div class="hero__right reveal-right">
       <p class="hero__desc">Two days on rigid-frame Evolution Sportster choppers, hand-built by OCEANBEETLE, through Pacific coastlines, volcanic mountain passes, ancient shrines, and neon-lit izakaya alleys — arriving at JOINTS 2026, Japan's largest custom motorcycle show.</p>
       <p class="hero__desc">RSK — our builder — leads on his own Sportster. Every road was chosen for a reason. Every stop tells a story.</p>
       <div class="hero__stats">
@@ -500,7 +557,7 @@
   <div class="container">
 
     <div class="itinerary-section">
-      <div class="day-header">
+      <div class="day-header reveal">
         <div class="day-header__num">01</div>
         <div class="day-header__info">
           <h3>Kamakura → Hamamatsu</h3>
@@ -510,43 +567,43 @@
 
       <div class="day-layout">
         <div class="timeline">
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">08:00</div>
             <div class="timeline__place">OCEANBEETLE Kamakura</div>
             <div class="timeline__desc">Walk into our shop. Choose your machine. Meet RSK — the man who built it. The adventure starts at the birthplace of these choppers.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">08:30</div>
             <div class="timeline__place">Hase-dera Temple</div>
             <div class="timeline__desc">One of Kamakura's most beautiful temples, dating back to 736 AD. Three choppers lined up at an ancient gate — that's your opening shot.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">09:00 – 11:00</div>
             <div class="timeline__place">The Ride: Route 134 → Seisho Bypass → Hakone Turnpike</div>
             <div class="timeline__desc">Two uninterrupted hours through Japan's most cinematic roads. Route 134 hugs the Pacific coastline, the Seisho Bypass lifts you above the ocean, and the Hakone Turnpike throws you into volcanic switchbacks through cedar forests. This is the peak of the trip.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">11:00 – 12:40</div>
             <div class="timeline__place">Hakone — Mt. Fuji & Hakone Shrine</div>
             <div class="timeline__desc">At the summit, Mt. Fuji reveals itself. Then descend to Hakone Shrine, where the sacred torii gate rises from the waters of Lake Ashi. A moment of stillness between the roads.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">13:20</div>
             <div class="timeline__place">Kura Sushi — Conveyor Belt Sushi</div>
             <div class="timeline__desc">Sushi glides past on a conveyor belt. Touch-screen ordering, surprise capsule toys, and the freshest fish you've ever tasted. The most fun lunch in Japan.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">14:10</div>
             <div class="timeline__place">Highway Cruise → Hamamatsu</div>
             <div class="timeline__desc">130 km on the Shin-Tomei Expressway. Rest stop at NEOPASA Suruga Bay with ocean views. Arrive in Hamamatsu by golden hour.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">18:30</div>
             <div class="timeline__place">Izakaya Night</div>
             <div class="timeline__desc">Counter seats. Charcoal-grilled everything. Simmering oden pots. Cold beer. Then hit the streets — the night is still young.</div>
@@ -554,9 +611,9 @@
         </div>
 
         <div class="day-images">
-          <div class="day-images__item" style="background-image: url('images/hakone-turnpike-winding.png');"></div>
-          <div class="day-images__item" style="background-image: url('images/hakone-fuji.png');"></div>
-          <div class="day-images__item" style="background-image: url('images/kaiten-sushi.jpg');"></div>
+          <div class="day-images__item reveal-scale" style="background-image: url('images/hakone-turnpike-winding.png');"></div>
+          <div class="day-images__item reveal-scale" style="background-image: url('images/hakone-fuji.png');"></div>
+          <div class="day-images__item reveal-scale" style="background-image: url('images/kaiten-sushi.jpg');"></div>
         </div>
       </div>
     </div>
@@ -568,7 +625,7 @@
   <div class="container">
 
     <div class="itinerary-section">
-      <div class="day-header">
+      <div class="day-header reveal">
         <div class="day-header__num">02</div>
         <div class="day-header__info">
           <h3>Hamamatsu → Nagoya</h3>
@@ -578,37 +635,37 @@
 
       <div class="day-layout">
         <div class="timeline">
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">09:15</div>
             <div class="timeline__place">Kominka Coffee</div>
             <div class="timeline__desc">Morning coffee in a restored 100-year-old farmhouse. Sunlight through paper screens. A quiet start before the final push.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">10:15</div>
             <div class="timeline__place">Lake Hamana — Shibuki Bridge</div>
             <div class="timeline__desc">A crimson bridge arcs over the lake like something from a Miyazaki film. Line up the bikes against the red lacquer and let the scene speak for itself.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">10:35</div>
             <div class="timeline__place">Highway Cruise → Nagoya</div>
             <div class="timeline__desc">90 minutes on the Tomei Expressway, 100 km west. Rest stop at NEOPASA Okazaki if you need it. Roll into Nagoya by noon.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">12:00</div>
             <div class="timeline__place">Ichiran Ramen</div>
             <div class="timeline__desc">Solo booths. A custom order sheet. A bamboo curtain lifts — the most perfect bowl of tonkotsu ramen appears. This isn't lunch. It's a ceremony.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">13:30</div>
             <div class="timeline__place">Kimono Experience</div>
             <div class="timeline__desc">Trade your riding jacket for a hand-tied kimono. Then step outside — because there's nothing more iconic than a kimono-clad rider standing next to a chopper.</div>
           </div>
 
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__time">14:45</div>
             <div class="timeline__place">Nagoya Castle</div>
             <div class="timeline__desc">One of Japan's most famous castles, crowned with golden dolphins. Explore in kimono — where samurai history meets chopper culture.</div>
@@ -616,9 +673,9 @@
         </div>
 
         <div class="day-images">
-          <div class="day-images__item" style="background-image: url('images/hamanako-red-bridge.png');"></div>
-          <div class="day-images__item" style="background-image: url('images/ichiran-ramen.jpg');"></div>
-          <div class="day-images__item" style="background-image: url('images/kimono-nagoya-castle.png');"></div>
+          <div class="day-images__item reveal-scale" style="background-image: url('images/hamanako-red-bridge.png');"></div>
+          <div class="day-images__item reveal-scale" style="background-image: url('images/ichiran-ramen.jpg');"></div>
+          <div class="day-images__item reveal-scale" style="background-image: url('images/kimono-nagoya-castle.png');"></div>
         </div>
       </div>
     </div>
@@ -629,7 +686,7 @@
 <section class="itinerary" style="background: linear-gradient(to bottom, var(--dark) 0%, var(--deep-red) 100%);">
   <div class="container">
     <div class="itinerary-section" style="margin-bottom: 0;">
-      <div class="joints-header">
+      <div class="joints-header reveal">
         <img src="images/joints-logo.png" alt="JOINTS" class="joints-header__logo">
         <div class="joints-header__info">
           <h3>Day 03 — JOINTS 2026</h3>
@@ -638,13 +695,13 @@
       </div>
 
       <div class="timeline">
-        <div class="timeline__item">
+        <div class="timeline__item reveal">
           <div class="timeline__time">09:30 – 16:00</div>
           <div class="timeline__place">Port Messe Nagoya</div>
           <div class="timeline__desc">The final destination. JOINTS is where Japan's finest custom builders reveal their latest work — choppers, bobbers, hot rods, and machines that defy category. Walk the floor, meet the legends. You didn't just attend. You arrived.</div>
         </div>
 
-        <div class="timeline__item">
+        <div class="timeline__item reveal">
           <div class="timeline__time">All Day</div>
           <div class="timeline__place">Sportster Meeting</div>
           <div class="timeline__desc">A gathering dedicated to the Sportster bloodline. Your OCEANBEETLE Evo Sportsters belong here.</div>
@@ -662,7 +719,7 @@
     <p class="section-text">Every OCEANBEETLE chopper is a rigid-frame Evolution Sportster, built by hand in Kamakura by RSK. No two are alike. These machines exist nowhere else on earth — and they're yours for the ride.</p>
 
     <div class="machines__grid">
-      <div class="machine-card">
+      <div class="machine-card reveal-left stagger-1">
         <div class="machine-card__img" style="background-image: url('images/hellfire.jpg');"></div>
         <div class="machine-card__body">
           <div class="machine-card__name">HELL FIRE</div>
@@ -675,7 +732,7 @@
           </p>
         </div>
       </div>
-      <div class="machine-card">
+      <div class="machine-card reveal-right stagger-2">
         <div class="machine-card__img" style="background-image: url('images/leopard.jpg');"></div>
         <div class="machine-card__body">
           <div class="machine-card__name">LEOPARD</div>
@@ -695,8 +752,8 @@
 
 <!-- ═══════════════════ CLOSING ═══════════════════ -->
 <section class="closing">
-  <h2 class="closing__title">See You on the Road.</h2>
-  <p class="closing__text">We've got the bikes, the routes, the stops, and the crew. All we need is you two. Let's make this happen.</p>
+  <h2 class="closing__title reveal">See You on the Road.</h2>
+  <p class="closing__text reveal stagger-1">We've got the bikes, the routes, the stops, and the crew. All we need is you two. Let's make this happen.</p>
   <p class="closing__sig">— TAKE, RSK & TSUGUMI / OCEANBEETLE, Kamakura</p>
 </section>
 
@@ -704,5 +761,26 @@
   <p>BEETLE RIDER by OCEANBEETLE — Kamakura, Japan</p>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => observer.observe(el));
+
+  // Hero elements animate immediately
+  setTimeout(() => {
+    document.querySelectorAll('.hero .reveal-left, .hero .reveal-right').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 300);
+});
+</script>
 </body>
 </html>
