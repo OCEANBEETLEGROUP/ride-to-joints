@@ -235,6 +235,30 @@
 
   .itinerary-section { margin-bottom: 100px; }
 
+  /* ── WEATHER NOTE ── */
+  .weather-note {
+    background: rgba(195,13,35,0.08);
+    border-left: 3px solid var(--chopper-red);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    max-width: 680px;
+  }
+  .weather-note strong {
+    display: block;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .weather-note p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin: 0;
+  }
+
   /* ── DAY LAYOUT: timeline left + images right ── */
   .day-layout {
     display: grid;
@@ -592,8 +616,8 @@
       <div class="hero__date">APRIL 10 – 12, 2026</div>
     </div>
     <div class="hero__right reveal-right">
-      <p class="hero__desc">Two days on rigid-frame Evolution Sportster choppers, hand-built by OCEANBEETLE, through Pacific coastlines, volcanic mountain passes, ancient shrines, and neon-lit izakaya alleys — arriving at JOINTS 2026, Japan's largest custom motorcycle show.</p>
-      <p class="hero__desc">RSK — our builder — leads on his own Sportster. Every road was chosen for a reason. Every stop tells a story.</p>
+      <p class="hero__desc">Three days from Kamakura to Nagoya — arriving at JOINTS 2026, Japan's largest custom motorcycle show. On rigid-frame Evolution Sportsters hand-built by OCEANBEETLE, through lake bridges, ramen temples, kimono streets, and neon-lit izakaya alleys.</p>
+      <p class="hero__desc">Day 1 is forecast for rain — so we'll cruise to Hamamatsu in the van with your bikes loaded up. Day 2 is when the choppers truly hit the road. RSK — our builder — rides with you from there.</p>
       <div class="hero__stats">
         <div>
           <div class="stat__number">300+</div>
@@ -619,8 +643,8 @@
 <!-- ═══════════════════ MOBILE INTRO (hidden on desktop) ═══════════════════ -->
 <section class="mobile-intro reveal">
   <div class="container">
-    <p class="hero__desc">Two days on rigid-frame Evolution Sportster choppers, hand-built by OCEANBEETLE, through Pacific coastlines, volcanic mountain passes, ancient shrines, and neon-lit izakaya alleys — arriving at JOINTS 2026, Japan's largest custom motorcycle show.</p>
-    <p class="hero__desc" style="margin-top:16px;">RSK — our builder — leads on his own Sportster. Every road was chosen for a reason. Every stop tells a story.</p>
+    <p class="hero__desc">Three days from Kamakura to Nagoya — arriving at JOINTS 2026, Japan's largest custom motorcycle show. On rigid-frame Evolution Sportsters hand-built by OCEANBEETLE, through lake bridges, ramen temples, kimono streets, and neon-lit izakaya alleys.</p>
+    <p class="hero__desc" style="margin-top:16px;">Day 1 is forecast for rain — so we'll cruise to Hamamatsu in the van with your bikes loaded up. Day 2 is when the choppers truly hit the road. RSK — our builder — rides with you from there.</p>
     <div class="hero__stats" style="margin-top:32px;">
       <div><div class="stat__number">300+</div><div class="stat__label">Kilometers</div></div>
       <div><div class="stat__number">2</div><div class="stat__label">Days Riding</div></div>
@@ -639,58 +663,62 @@
         <div class="day-header__num">01</div>
         <div class="day-header__info">
           <h3>Kamakura → Hamamatsu</h3>
-          <p>Thursday, April 10 — Temples, Ocean Roads, Mountain Passes & Izakaya Nights</p>
+          <p>Thursday, April 10 — Rainy Day Van Cruise, Conveyor Sushi & Izakaya Night</p>
         </div>
+      </div>
+
+      <div class="weather-note reveal">
+        <strong>☔ Weather Update</strong>
+        <p>Day 1 is forecast for heavy rain, so we're loading HELL FIRE and SHOGUN into the van and cruising straight to Hamamatsu together. Think of it as the storytelling intro — the shop, the sushi, the izakaya night. The real ride starts Day 2, when the choppers hit the road from Hamamatsu to Nagoya.</p>
       </div>
 
       <div class="day-layout">
         <div class="timeline">
           <div class="timeline__item reveal">
-            <div class="timeline__time">08:00</div>
+            <div class="timeline__time">10:00</div>
             <div class="timeline__place">OCEANBEETLE Kamakura</div>
-            <div class="timeline__desc">Walk into our shop. Choose your machine. Meet RSK — the man who built it. The adventure starts at the birthplace of these choppers.</div>
+            <div class="timeline__desc">Walk into the shop where these machines were born. Meet RSK — the man who built them. Touch the metal, hear the story, pick your chopper. Then we load HELL FIRE and SHOGUN into the van together.</div>
           </div>
 
           <div class="timeline__item reveal">
-            <div class="timeline__time">08:30</div>
-            <div class="timeline__place">Hase-dera Temple</div>
-            <div class="timeline__desc">One of Kamakura's most beautiful temples, dating back to 736 AD. Three choppers lined up at an ancient gate — that's your opening shot.</div>
+            <div class="timeline__time">10:30</div>
+            <div class="timeline__place">Store Shoot</div>
+            <div class="timeline__desc">Thirty minutes inside the shop to capture the atmosphere — the bikes, the build, the people. The quiet moment before the road.</div>
           </div>
 
           <div class="timeline__item reveal">
-            <div class="timeline__time">09:00 – 11:00</div>
-            <div class="timeline__place">The Ride: Route 134 → Seisho Bypass → Hakone Turnpike</div>
-            <div class="timeline__desc">Two uninterrupted hours through Japan's most cinematic roads. Route 134 hugs the Pacific coastline, the Seisho Bypass lifts you above the ocean, and the Hakone Turnpike throws you into volcanic switchbacks through cedar forests. This is the peak of the trip.</div>
+            <div class="timeline__time">11:30</div>
+            <div class="timeline__place">Departure — Van Cruise West</div>
+            <div class="timeline__desc">Six of us, two bikes in the van. Onto the highway: Chigasaki Kaigan → Shin-Shonan Bypass → Ken-O Expressway → Tomei → Numazu. Rain on the windows, choppers in the back. Pure Japanese road trip mood.</div>
           </div>
 
           <div class="timeline__item reveal">
-            <div class="timeline__time">11:00 – 12:40</div>
-            <div class="timeline__place">Hakone — Mt. Fuji & Hakone Shrine</div>
-            <div class="timeline__desc">At the summit, Mt. Fuji reveals itself. Then descend to Hakone Shrine, where the sacred torii gate rises from the waters of Lake Ashi. A moment of stillness between the roads.</div>
+            <div class="timeline__time">13:00</div>
+            <div class="timeline__place">Kura Sushi Mishima — Conveyor Belt Lunch</div>
+            <div class="timeline__desc">Sushi glides past on the belt. Touch-screen ordering. The freshest fish you've ever tasted. Clear five empty plates into the slot and Bikkura-Pon drops a surprise capsule toy. The most fun lunch in Japan.</div>
           </div>
 
           <div class="timeline__item reveal">
-            <div class="timeline__time">13:20</div>
-            <div class="timeline__place">Kura Sushi — Conveyor Belt Sushi</div>
-            <div class="timeline__desc">Sushi glides past on a conveyor belt. Touch-screen ordering, surprise capsule toys, and the freshest fish you've ever tasted. The most fun lunch in Japan.</div>
+            <div class="timeline__time">14:00</div>
+            <div class="timeline__place">Shin-Tomei → Hamamatsu</div>
+            <div class="timeline__desc">130 km cruise west on Japan's newest expressway. Mountain passes through the rain, warm cups of vending-machine coffee at the rest stops. Arrive in Hamamatsu by mid-afternoon.</div>
           </div>
 
           <div class="timeline__item reveal">
-            <div class="timeline__time">14:10</div>
-            <div class="timeline__place">Highway Cruise → Hamamatsu</div>
-            <div class="timeline__desc">130 km on the Shin-Tomei Expressway. Rest stop at NEOPASA Suruga Bay with ocean views. Arrive in Hamamatsu by golden hour.</div>
+            <div class="timeline__time">16:00</div>
+            <div class="timeline__place">Check-In — Route Inn Hamamatsu</div>
+            <div class="timeline__desc">Bikes stay in the van. Crew heads inside. Rest, shower, change, breathe. You've got two hours before the night begins.</div>
           </div>
 
           <div class="timeline__item reveal">
             <div class="timeline__time">18:30</div>
-            <div class="timeline__place">Izakaya Night</div>
-            <div class="timeline__desc">Counter seats. Charcoal-grilled everything. Simmering oden pots. Cold beer. Then hit the streets — the night is still young.</div>
+            <div class="timeline__place">Izakaya Night — Koronagi</div>
+            <div class="timeline__desc">Counter seats. Charcoal-grilled everything. Simmering oden pots. Cold beer, sake, loud laughter. Then hit the streets — the night is still young in Hamamatsu.</div>
           </div>
         </div>
 
         <div class="day-images">
-          <div class="day-images__item reveal-scale" style="background-image: url('images/hakone-turnpike-winding.png');"></div>
-          <div class="day-images__item reveal-scale" style="background-image: url('images/hakone-fuji.png');"></div>
+          <div class="day-images__item reveal-scale" style="background-image: url('images/hellfire.jpg');"></div>
           <div class="day-images__item reveal-scale" style="background-image: url('images/kaiten-sushi.jpg');"></div>
         </div>
       </div>
@@ -813,18 +841,18 @@
       <div class="machine-card reveal-right stagger-2">
         <div class="machine-card__img" style="background-image: url('images/leopard.jpg');"></div>
         <div class="machine-card__body">
-          <div class="machine-card__name">LEOPARD</div>
-          <div class="machine-card__model">1999 XLH1200 — Evolution Sportster</div>
+          <div class="machine-card__name">SHOGUN</div>
+          <div class="machine-card__model">Brand New Build — Unveiled for Adri</div>
           <p class="machine-card__specs">
-            1200cc · 5-Speed · Chopper<br>
-            Weight: 310kg · Tank: 6L<br>
-            Tires: F21" / R18"<br>
-            Built & Paint: RSK / OCEANBEETLE
+            Evolution Sportster · Chopper<br>
+            Built & Paint: RSK / OCEANBEETLE<br>
+            Full specs reveal on the road<br>
+            <span style="opacity: 0.6; font-size: 11px;">(image: preview only)</span>
           </p>
         </div>
       </div>
     </div>
-    <p style="font-size: 12px; color: var(--text-muted); margin-top: 24px; opacity: 0.6;">* A new build — SHOGUN — may join the lineup. We'll confirm closer to the date.</p>
+    <p style="font-size: 12px; color: var(--text-muted); margin-top: 24px; opacity: 0.6;">* SHOGUN is confirmed for Adri — RSK's latest build, revealed in person when you arrive.</p>
   </div>
 </section>
 
